@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Vote</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Plateforme de Mise en Commun des Votes</h1>
+        <div class="horizontal-layout">
+            <div class="section">
+                <h2>Propriétaire</h2>
+                <button id="get-owner-btn">Qui suis-je ?</button>
+                <p id="owner-output"></p>
+            </div>
+
+            <div class="section">
+                <h2>Ajouter des Rôles</h2>
+                <div class="role-input">
+                    <label for="president-address">ID du Président :</label>
+                    <input type="text" id="president-address">
+                    <button id="set-president-btn">Valider Président</button>
+                    <p id="president-message"></p>
+                </div>
+                <div class="role-input">
+                    <label for="secretary-address">ID du Secrétaire :</label>
+                    <input type="text" id="secretary-address">
+                    <button id="set-secretary-btn">Valider Secrétaire</button>
+                    <p id="secretary-message"></p>
+                </div>
+                <div class="role-input">
+                    <label for="scrutineer-address">ID du Scrutinateur :</label>
+                    <input type="text" id="scrutineer-address">
+                    <button id="set-scrutineer-btn">Valider Scrutinateur</button>
+                    <p id="scrutineer-message"></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Ajouter une Résolution</h2>
+                <input type="text" id="resolution-title" placeholder="Entrez la résolution">
+                <button id="add-resolution-btn">Ajouter Résolution</button>
+                <p id="resolution-output"></p>
+            </div>
+
+            <div class="section">
+                <h2>Voter pour une Résolution</h2>
+                <label for="resolution-id">ID de la Résolution :</label>
+                <input type="text" id="resolution-id">
+                <select id="vote-type">
+                    <option value="Pour">Pour</option>
+                    <option value="Contre">Contre</option>
+                    <option value="Neutre">Neutre</option>
+                </select>
+                <button id="vote-btn">Voter</button>
+            </div>
+
+            <div class="section">
+                <h2>Résultats des Votes</h2>
+                <label for="results-resolution-id">ID de la Résolution :</label>
+                <input type="text" id="results-resolution-id">
+                <button id="get-results-btn">Obtenir les Résultats</button>
+                <p id="results-output"></p>
+            </div>
+
+            <div class="section">
+                <h2>Gestion de la Whitelist</h2>
+                <div class="whitelist-input">
+                    <label for="single-whitelist-address">Adresse unique à ajouter :</label>
+                    <input type="text" id="single-whitelist-address">
+                    <button id="add-single-to-whitelist-btn">Ajouter une adresse</button>
+                    <p id="single-whitelist-add-message"></p>
+                </div>
+                <div class="whitelist-input">
+                    <label for="whitelist-address">Adresse à ajouter :</label>
+                    <input type="text" id="whitelist-address">
+                    <button id="add-to-whitelist-btn">Ajouter à la Whitelist</button>
+                    <p id="whitelist-add-message"></p>
+                </div>
+                <div class="whitelist-input">
+                    <label for="check-whitelist-address">Vérifier l'adresse :</label>
+                    <input type="text" id="check-whitelist-address">
+                    <button id="check-whitelist-btn">Vérifier Whitelist</button>
+                    <p id="whitelist-check-message"></p>
+                </div>
+                <div class="whitelist-input">
+                    <label for="remove-whitelist-address">Adresse à supprimer :</label>
+                    <input type="text" id="remove-whitelist-address">
+                    <button id="remove-from-whitelist-btn">Supprimer de la Whitelist</button>
+                    <p id="whitelist-remove-message"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script type="module" src="src.js"></script>
+</body>
+</html>
